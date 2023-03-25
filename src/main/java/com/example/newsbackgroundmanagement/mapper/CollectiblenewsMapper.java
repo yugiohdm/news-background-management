@@ -2,10 +2,8 @@ package com.example.newsbackgroundmanagement.mapper;
 
 import com.example.newsbackgroundmanagement.entity.Collectiblenews;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Insert;
+import com.example.newsbackgroundmanagement.entity.UserReleasenewsDto;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 /**
  * <p>
@@ -17,6 +15,6 @@ import java.util.List;
  */
 public interface CollectiblenewsMapper extends BaseMapper<Collectiblenews> {
     @Select("select r.*,u.*  from  user u,releasenews r where u.uid=#{id1} and r.nid=#{id2}")
-    Collectiblenews getUserandReleasenews(Integer id1,Integer id2);
+   UserReleasenewsDto getUserandReleasenews(Integer id1, Integer id2);
 
 }

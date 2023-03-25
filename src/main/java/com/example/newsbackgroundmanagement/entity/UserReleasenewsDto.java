@@ -5,17 +5,22 @@ import com.baomidou.mybatisplus.annotation.TableId;
 
 public class UserReleasenewsDto extends User{
     private static final long serialVersionUID = 1L;
+
     @TableId(value = "nid", type = IdType.AUTO)
     private Integer nid;
-
     private String newstype;
 
-
-    private String newstitle;
+    private Integer likes;
 
     private String newscontent;
 
     private String releasedate;
+
+    private String newstitle;
+
+    private String newimageurl;
+
+    private String state;
 
 
 
@@ -35,13 +40,12 @@ public class UserReleasenewsDto extends User{
         this.newstype = newstype;
     }
 
-
-    public String getNewstitle() {
-        return newstitle;
+    public Integer getLikes() {
+        return likes;
     }
 
-    public void setNewstitle(String newstitle) {
-        this.newstitle = newstitle;
+    public void setLikes(Integer likes) {
+        this.likes = likes;
     }
 
     public String getNewscontent() {
@@ -60,6 +64,44 @@ public class UserReleasenewsDto extends User{
         this.releasedate = releasedate;
     }
 
+    public String getNewstitle() {
+        return newstitle;
+    }
+
+    public void setNewstitle(String newstitle) {
+        this.newstitle = newstitle;
+    }
+
+    public String getNewimageurl() {
+        return newimageurl;
+    }
+
+    public void setNewimageurl(String newimageurl) {
+        this.newimageurl = newimageurl;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Releasenews{" +
+                "nid=" + nid +
+                ", newstype=" + newstype +
+                ", likes=" + likes +
+                ", newscontent=" + newscontent +
+                ", releasedate=" + releasedate +
+                ", newstitle=" + newstitle +
+                ", newimageurl=" + newimageurl +
+                ", state=" + state +
+                "}";
+    }
 
 
 }

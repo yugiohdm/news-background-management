@@ -1,11 +1,14 @@
-package com.example.newsbackgroundmanagement.util;
+package com.example.newsbackgroundmanagement.config;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
+@MapperScan(value = "com.example.newsbackgroundmanagement.mapper")
 public class MybatisConfig {
 
     // 分页插件
@@ -18,6 +21,8 @@ public class MybatisConfig {
         // paginationInterceptor.setLimit(500);
         // 开启 count 的 join 优化,只针对部分 left join
         PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor();
+        // 当要查询的页码超出最大页码的时候，跳转到第一个页码
+        paginationInnerInterceptor.setOverflow(true);
         mybatisPlusInterceptor.addInnerInterceptor(paginationInnerInterceptor);
         return mybatisPlusInterceptor;
     }

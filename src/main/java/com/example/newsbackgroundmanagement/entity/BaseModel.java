@@ -1,4 +1,4 @@
-package com.example.demo2.entity;
+package com.example.newsbackgroundmanagement.entity;
 
 import java.util.List;
 

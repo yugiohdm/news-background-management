@@ -1,5 +1,6 @@
 package com.example.newsbackgroundmanagement.service;
 
+import com.example.newsbackgroundmanagement.entity.BaseModel;
 import com.example.newsbackgroundmanagement.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-03-04
  */
 public interface IUserService extends IService<User> {
+    public BaseModel UsernameLogin(User user);
 
+    public BaseModel PhoneLogin(User user);
+
+    public BaseModel EmailLogin(User user);
+
+    public BaseModel Register(User user);
 }
