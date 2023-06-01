@@ -1,2 +1,0 @@
-跳转   cd C:\Users\yugioh\AppData\Local\platform-tools
-链接   ./adb connect 127.0.0.1:7555
